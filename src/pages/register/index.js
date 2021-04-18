@@ -4,15 +4,15 @@ import Illustration from '../../assets/illustration.png'
 const Register = () => {
   return (
     <div className="container-fluid h-100 bg-primary">
-      <Header whiteVersion/>
+      <Header whiteVersion hideCart/>
       <div className="row">
         <div className="col-6 my-auto">
           <img src={Illustration} className='img-fluid' alt='illustration' />
         </div>
         <div className="col-6">
           <div className="box col-9">
-            <h2 className="text-center"
-            >Falta pouco pra fazer o seu pet feliz.</h2>
+            <h3 className="text-center"
+            >Falta pouco pra fazer o seu pet feliz.</h3>
             <input
               type="text"
               className="form-control form-control-lg mb-3"
