@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Register from './pages/register'
-import './styles/global.css'
+import Routes from './routes'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Register />
+    <Routes />
   </React.StrictMode>,
   document.getElementById('root')
 );
