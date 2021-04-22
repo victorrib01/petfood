@@ -3,8 +3,10 @@ import LogoWhite from '../../assets/logo-white.png'
 
 import { Link } from 'react-router-dom';
 import './styles.css';
+import { useSelector } from 'react-redux';
 
 const Header = ({ whiteVersion, hideCart }) => {
+  const {cart} = useSelector(state => state.shop)
   const openDrawer = () => {
     const event = new CustomEvent('openCart');
     window.dispatchEvent(event);
@@ -20,7 +22,7 @@ const Header = ({ whiteVersion, hideCart }) => {
       {!hideCart && (
         <button onClick={() => openDrawer()} className='btn btn-secondary cart-button'>
           <span className='mdi mdi-cart'></span>
-        2 Ítens
+        {cart.length} {cart.length === 1 ? 'Item':'Ítens'}
         </button>
       )}
     </div>

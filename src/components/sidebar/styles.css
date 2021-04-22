@@ -1,12 +1,12 @@
-.sidebar h5 {
-  height: 30px;
-  margin-bottom: 0;
+.sidebar h5{
+	height: 30px;
+	margin-bottom: 0;
 }
 
 .sidebar .products {
-  overflow-y: auto;
+  overflow: auto;
   height: calc(100% - 190px);
-  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .sidebar .footer {

@@ -1,21 +1,34 @@
 import './styles.css';
+import { setPetshopMapSelected, setMapCenter } from '../../store/modules/shop/actions'
+import { useDispatch, useSelector } from 'react-redux';
 
-const Petshop = () => {
+const Petshop = ({ petshop }) => {
+  const dispatch = useDispatch();
+  const { petshopMapSelected } = useSelector(state => state.shop)
+
+  const setSelectedPetshop = () => {
+    dispatch(setPetshopMapSelected(petshop));
+    dispatch(setMapCenter(petshop.location));
+  }
+
   return (
-    <li className="petshop d-inline-block">
+    <li
+      className={`petshop d-inline-block ${petshopMapSelected === petshop._id ? 'active' : ''}`}
+      onClick={() => setSelectedPetshop()}
+    >
       <div className="d-inline-block">
-        <img src="https://media-exp1.licdn.com/dms/image/C560BAQGFB5bXwnGsiQ/company-logo_200_200/0/1606828505187?e=2159024400&v=beta&t=Tak_Qe9Q2Em601A7GxzEGfd9938TpUzaLqt4SZw8ByE" 
-        className="img-fluid" alt='petshop_logo' />
+        <img src={petshop.logo}
+          className="img-fluid" alt={`${petshop.name}_logo`} />
       </div>
       <div className="d-inline-block pl-3 align-bottom">
-        <b>Petlove</b>
+        <b>{petshop.name}</b>
         <div className="petshop-infos">
           <span className="mdi mdi-star"></span>
           <text>
-            <b>2,8</b>
+            <b>{petshop.rate}</b>
           </text>
           <span className="mdi mdi-cash-usd-outline"></span>
-          <text>$$$</text>
+          <text>{petshop.category}</text>
           <span className="mdi mdi-crosshairs-gps"></span>
           <text>2,9km</text>
         </div>

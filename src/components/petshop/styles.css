@@ -3,7 +3,8 @@
   padding: 7px;
   margin-right: 20px;
   border-radius: 5px;
-  border-bottom: 3px;
+  border-bottom: 3px solid transparent;
+  transition: 0.5s;
 }
 
 .petshop img {
@@ -30,4 +31,12 @@
   margin-right: 10px;
   vertical-align: middle;
   color: #626264;
+}
+
+.petshop.active,
+.petshop:hover{
+  cursor: pointer;
+  border-bottom: 3px solid rgb(var(--primary));
+  transition: 0.5s;
+  background-color: #f6f5f5;
 }
