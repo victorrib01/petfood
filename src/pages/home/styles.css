@@ -1,5 +1,5 @@
 .petshop-list-container {
-  height: 300px;
+  height: 200px;
   position: absolute;
   margin-bottom: 0;
   top: 91px;
@@ -9,7 +9,7 @@
 
   background: linear-gradient(
     180deg,
-    #ffffff 40%,
+    #ffffff 90%,
     rgba(255,255,255, 0) 100%
   );
 }
